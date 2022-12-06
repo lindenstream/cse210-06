@@ -3,37 +3,37 @@ from game.casting.actor import Actor
 
 class Score(Actor):
     """
-    A time lapsed recorder. 
+    A score keeper. 
     
-    The responsibility of Score is to keep track of the time elapsed
+    The responsibility of Score is to keep track of the game score
 
     Attributes:
         _points (int): The points earned in the game.
     """
     def __init__(self):
         super().__init__()
-        self._counter = 0
-        self.add_counter(0)
+        self._points = 0
+        self.add_points(0)
         self._is_playing = True
 
-    def add_counter(self, counter):
+    def add_points(self, added_points):
         """Adds the given points to the score's total points.
         
         Args:
             points (int): The points to add.
         """
-        self._counter += counter
-        self.set_text(f"Timer: {self._counter}")
+        self._points += added_points
+        self.set_text(f"Score: {self._points}")
 
-    def get_counter(self):
-        """Returns the counter.
+    def get_score(self):
+        """Returns the score.
         
         """
-        return self._counter
+        return self._points
 
-    def stop_counter(self):
-        # sets the is_playing to False
-        self._is_playing = False
+    # def stop_counter(self):
+    #     # sets the is_playing to False
+    #     self._is_playing = False
 
     def is_playing(self):
         # returns is_playing status
