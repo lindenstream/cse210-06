@@ -32,6 +32,7 @@ def main():
     cast.add_actor("SBlock", SBlock())
     cast.add_actor("TBlock", TBlock())
     cast.add_actor("ZBlock", ZBlock())
+
     cast.add_actor("scores", Score())
    
     # start the game
