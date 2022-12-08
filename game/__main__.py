@@ -1,24 +1,24 @@
 import constants
 
-from game.casting.cast import Cast
-from game.casting.score import Score
-from game.casting.IBlock import IBlock
-from game.casting.JBlock import JBlock
-from game.casting.LBlock import LBlock
-from game.casting.OBlock import OBlock
-from game.casting.SBlock import SBlock
-from game.casting.TBlock import TBlock
-from game.casting.ZBlock import ZBlock
-from game.scripting.script import Script
-from game.scripting.control_actors_action import ControlActorsAction
-from game.scripting.move_actors_action import MoveActorsAction
-from game.scripting.handle_collisions_action import HandleCollisionsAction
-from game.scripting.draw_actors_action import DrawActorsAction
-from game.directing.director import Director
-from game.services.keyboard_service import KeyboardService
-from game.services.video_service import VideoService
-from game.shared.color import Color
-from game.shared.point import Point
+from casting.cast import Cast
+from casting.score import Score
+from casting.IBlock import IBlock
+from casting.JBlock import JBlock
+from casting.LBlock import LBlock
+from casting.OBlock import OBlock
+from casting.SBlock import SBlock
+from casting.TBlock import TBlock
+from casting.ZBlock import ZBlock
+from scripting.script import Script
+from scripting.control_actors_action import ControlActorsAction
+from scripting.move_actors_action import MoveActorsAction
+from scripting.handle_collisions_action import HandleCollisionsAction
+from scripting.draw_actors_action import DrawActorsAction
+from directing.director import Director
+from services.keyboard_service import KeyboardService
+from services.video_service import VideoService
+from shared.color import Color
+from shared.point import Point
 
 
 def main():
