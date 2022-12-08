@@ -2,9 +2,13 @@ import constants
 
 from game.casting.cast import Cast
 from game.casting.score import Score
-from game.casting.cycle import Cycle
-from game.casting.cycle1 import Cycle1
-from game.casting.cycle2 import Cycle2
+from game.casting.IBlock import IBlock
+from game.casting.JBlock import JBlock
+from game.casting.LBlock import LBlock
+from game.casting.OBlock import OBlock
+from game.casting.SBlock import SBlock
+from game.casting.TBlock import TBlock
+from game.casting.ZBlock import ZBlock
 from game.scripting.script import Script
 from game.scripting.control_actors_action import ControlActorsAction
 from game.scripting.move_actors_action import MoveActorsAction
