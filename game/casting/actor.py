@@ -24,6 +24,7 @@ class Actor:
         self._color = Color(255, 255, 255)
         self._position = Point(0, 0)
         self._velocity = Point(0, 0)
+        self._rotation = Point(0, 0)
 
     def get_color(self):
         """Gets the actor's color as a tuple of three ints (r, g, b).
@@ -64,6 +65,14 @@ class Actor:
             Point: The actor's speed and direction.
         """
         return self._velocity
+
+    def get_rotation(self):
+        """Gets the actor's speed and direction.
+            
+        Returns:
+            Point: The actor's speed and direction.
+        """
+        return self._rotation
     
     def move_next(self):
         """Moves the actor to its next position according to its velocity. Will wrap the position 
@@ -73,6 +82,19 @@ class Actor:
             max_x (int): The maximum x value.
             max_y (int): The maximum y value.
         """
+        x = (self._position.get_x() + self._velocity.get_x()) % constants.MAX_X
+        y = (self._position.get_y() + self._velocity.get_y()) % constants.MAX_Y
+        self._position = Point(x, y)
+
+    def rotate_next(self):
+        """ Rotate the actor to its next position according to its velocity. Will wrap the position 
+        from one side of the screen to the other when it reaches the given maximum x and y values.
+        
+        Args:
+            max_x (int): The maximum x value.
+            max_y (int): The maximum y value.
+        """
+        # rotate through the list of instances for each piece
         x = (self._position.get_x() + self._velocity.get_x()) % constants.MAX_X
         y = (self._position.get_y() + self._velocity.get_y()) % constants.MAX_Y
         self._position = Point(x, y)

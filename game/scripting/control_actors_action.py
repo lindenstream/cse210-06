@@ -30,53 +30,28 @@ class ControlActorsAction(Action):
             script (Script): The script of Actions in the game.
         """
         player1 = False
-        player2 = False
+        # player2 = False
        
-        # left
-        if self._keyboard_service.is_key_down('a'):
-            self._direction = Point(-constants.CELL_SIZE, 0)
-            player1 = True
-
-        # right
-        if self._keyboard_service.is_key_down('d'):
-            self._direction = Point(constants.CELL_SIZE, 0)
-            player1 = True
-        
-        # up
-        if self._keyboard_service.is_key_down('w'):
-            self._direction = Point(0, -constants.CELL_SIZE)
-            player1 = True
-        
-        # down
-        if self._keyboard_service.is_key_down('s'):
-            self._direction = Point(0, constants.CELL_SIZE)
-            player1 = True
-
         # left
         if self._keyboard_service.is_key_down('j'):
             self._direction = Point(-constants.CELL_SIZE, 0)
-            player2 = True
-        
+            player1 = True
+
         # right
         if self._keyboard_service.is_key_down('l'):
             self._direction = Point(constants.CELL_SIZE, 0)
-            player2 = True
+            player1 = True
         
-        # up
-        if self._keyboard_service.is_key_down('i'):
+        # rotate ()
+        if self._keyboard_service.is_key_down('a'):
             self._direction = Point(0, -constants.CELL_SIZE)
-            player2 = True
+            player1 = True
         
-        # down
+        # speed drop
         if self._keyboard_service.is_key_down('k'):
             self._direction = Point(0, constants.CELL_SIZE)
-            player2 = True
+            player1 = True
+
         
-        cycle1 = cast.get_first_actor("cycle1")
-        cycle2 = cast.get_first_actor("cycle2")
-        
-        if player1:
-            cycle1.turn_head(self._direction)
-        
-        if player2:
-            cycle2.turn_head(self._direction)
+        active_piece = cast.get_first_actor("active piece")
+        active_piece.move_piece(self._direction)

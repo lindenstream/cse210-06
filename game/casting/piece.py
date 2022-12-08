@@ -52,9 +52,9 @@ class Piece(Actor):
     #         segment.set_color(constants.YELLOW)
     #         self._blocks.append(block)
 
-    def rotate_center(self, rotate):
-        # rotates the center
-        self._blocks[self.get_center_block()].set_rotation(rotate)
+    def move_piece(self, velocity):
+        # moves the piece
+        self._blocks[self.get_center_block()].set_rotation(velocity)
 
     # need a rotation method?
     
