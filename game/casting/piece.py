@@ -1,6 +1,6 @@
 import constants
-from game.casting.actor import Actor
-from game.shared.point import Point
+from casting.actor import Actor
+from shared.point import Point
 
 
 class Piece(Actor):
