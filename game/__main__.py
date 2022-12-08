@@ -25,8 +25,13 @@ def main():
     
     # create the cast
     cast = Cast()
-    cast.add_actor("cycle1", Cycle1())
-    cast.add_actor("cycle2", Cycle2())
+    cast.add_actor("IBlock", IBlock())
+    cast.add_actor("JBlock", JBlock())
+    cast.add_actor("LBlock", LBlock())
+    cast.add_actor("OBlock", OBlock())
+    cast.add_actor("SBlock", SBlock())
+    cast.add_actor("TBlock", TBlock())
+    cast.add_actor("ZBlock", ZBlock())
     cast.add_actor("scores", Score())
    
     # start the game
