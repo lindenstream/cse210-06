@@ -1,4 +1,4 @@
-from color import Color
+from game.shared.color import Color
 
 # global constants for the game
 

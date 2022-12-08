@@ -1,6 +1,6 @@
 import constants
-from casting.actor import Actor
-from shared.point import Point
+from game.casting.actor import Actor
+from game.shared.point import Point
 
 
 class Piece(Actor):
@@ -27,11 +27,11 @@ class Piece(Actor):
         for block in self._blocks:
             block.move_next()
         # update velocities
-        # for i in range(len(self._segments) - 1, 0, -1):
-        #     trailing = self._segments[i]
-        #     previous = self._segments[i - 1]
-        #     velocity = previous.get_velocity()
-        #     trailing.set_velocity(velocity)
+        for i in range(len(self._segments) - 1, 0, -1):
+            trailing = self._segments[i]
+            previous = self._segments[i - 1]
+            velocity = previous.get_velocity()
+            trailing.set_velocity(velocity)
 
     def get_center_block(self):
         # returns center block

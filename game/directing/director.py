@@ -25,8 +25,8 @@ class Director:
         self._video_service.open_window()
         counter = cast.get_first_actor("scores")
         while self._video_service.is_window_open():
-            if counter.is_playing():
-                counter.add_counter(1)
+            #if counter.is_playing():
+            #    counter.add_counter(1)
             self._execute_actions("input", cast, script, counter)
             self._execute_actions("update", cast, script, counter)
             self._execute_actions("output", cast, script, counter)

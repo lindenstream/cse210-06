@@ -1,7 +1,7 @@
 import constants
-from casting.actor import Actor
-from casting.piece import Piece
-from shared.point import Point
+from game.casting.actor import Actor
+from game.casting.piece import Piece
+from game.shared.point import Point
 
 
 class OBlock(Piece):

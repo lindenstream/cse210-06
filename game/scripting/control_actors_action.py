@@ -1,6 +1,6 @@
 import constants
-from scripting.action import Action
-from shared.point import Point
+from game.scripting.action import Action
+from game.shared.point import Point
 
 
 class ControlActorsAction(Action):
@@ -35,23 +35,23 @@ class ControlActorsAction(Action):
         # left
         if self._keyboard_service.is_key_down('j'):
             self._direction = Point(-constants.CELL_SIZE, 0)
-            player1 = True
+        
 
         # right
         if self._keyboard_service.is_key_down('l'):
             self._direction = Point(constants.CELL_SIZE, 0)
-            player1 = True
+        
         
         # rotate ()
         if self._keyboard_service.is_key_down('a'):
             self._direction = Point(0, -constants.CELL_SIZE)
-            player1 = True
+        
         
         # speed drop
         if self._keyboard_service.is_key_down('k'):
             self._direction = Point(0, constants.CELL_SIZE)
-            player1 = True
+        
 
         
-        active_piece = cast.get_first_actor("active piece")
-        active_piece.move_piece(self._direction)
+        active_piece = cast.get_first_actor("IBlock")
+        active_piece.move_next(self._direction)
